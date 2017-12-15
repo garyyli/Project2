@@ -5,11 +5,7 @@
 from ggame import* 
 from random import randint
 
-EMPTY = 0
-MISS = 1
-ROWS = 5
-COLS = 5
-
+radius = 50
 
 def buildBoard():
     return [['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O']]
@@ -26,5 +22,8 @@ def redrawAll:
         
 if __name__ == '__main__': 
 
+white = Color(0xFFFFFF,1)
+red = Color(0xFF0000,1)
+black = Color(0x000000,1)
 
 App().run()
