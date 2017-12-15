@@ -24,3 +24,7 @@ def redrawAll:
         for col in range(0,5):
             print(board[row][col],' ',end = '')
         
+if __name__ == '__main__': 
+
+
+App().run()
