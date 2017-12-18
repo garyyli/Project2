@@ -25,8 +25,8 @@ if __name__ == '__main__':
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
-    blue = Color(0x0000FF, 1)
-    red = Color(0xFF0000,1)
+    blue = Color(0x009AFF, 1)
+    red = Color(0xBD1D1D,1)
     
     playerBoard = buildBoard()
     computerBoard = buildBoard()
