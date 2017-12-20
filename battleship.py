@@ -28,12 +28,14 @@ if __name__ == '__main__':
     blue = Color(0x009AFF, 1)
     red = Color(0xBD1D1D,1)
     
+    blackLine = LineStyle(1,black)
+    
     playerBoard = buildBoard()
     computerBoard = buildBoard()
     
-    emptyCircle = CircleAsset(radius,LineStyle(1,black),white)
-    missCircle = CircleAsset(radius,LineStyle(1,black), blue)
-    hitCircle = CircleAsset(radius,LineStyle(1,black),red)
+    emptyCircle = CircleAsset(radius, blackLine,white)
+    missCircle = CircleAsset(radius, blackLine, blue)
+    hitCircle = CircleAsset(radius, blackLine,red)
     
     
     App().run()
