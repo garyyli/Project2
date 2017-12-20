@@ -19,6 +19,9 @@ def redrawAll():
     for row in range(0,5):
         for col in range(0,5):
             print(board[row][col],' ',end = '')
+
+def mouseClick(event):
+    
         
 if __name__ == '__main__':
     data = {}
