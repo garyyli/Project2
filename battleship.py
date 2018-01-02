@@ -5,7 +5,7 @@
 from ggame import* 
 from random import randint
 
-radius = 50
+radius = 40
 
 def buildBoard():
     return [['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O']]
@@ -19,6 +19,10 @@ def redrawAll():
     for row in range(0,5):
         for col in range(0,5):
             Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
+     for row in range(0,5):
+        for col in range(0,5):
+            Sprite(emptyCircle,(radius*500*row+radius, radius*500*col+radius))
+            
 
 def mouseClick(event):
     print(event.x,event.y)
