@@ -18,7 +18,7 @@ def redrawAll():
         item.destroy()
     for row in range(0,5):
         for col in range(0,5):
-            Sprite(emptyCircle,(RADIUS*2*row+RADIUS, RADIUS*2*col+RADIUS))
+            Sprite(emptyCircle,(readius*2*row+RADIUS, radius*2*col+RADIUS))
 
 def mouseClick(event):
     print(event.x,event.y)
