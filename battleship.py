@@ -22,7 +22,7 @@ def redrawAll():
     for row in range(0,5):
         for col in range(0,5):
             Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
-    Sprite(textUser, (300,300))
+    Sprite(textUser, (150,400))
 
 def mouseClick(event):
     print(event.x,event.y)
