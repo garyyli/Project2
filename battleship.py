@@ -21,7 +21,7 @@ def redrawAll():
             Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
     for row in range(0,5):
         for col in range(0,5):
-            Sprite(emptyCircle,(radius*2*row+radius+300, radius*2*col+radius+300))
+            Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
             
 
 def mouseClick(event):
