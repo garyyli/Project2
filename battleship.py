@@ -18,9 +18,10 @@ def redrawAll():
         item.destroy()
     for row in range(0,5):
         for col in range(0,5):
-            print(board[row][col],' ',end = '')
+            Sprite(emptyCircle,(RADIUS*2*row+RADIUS, RADIUS*2*col+RADIUS))
 
 def mouseClick(event):
+    print(event.x,event.y)
     
         
 if __name__ == '__main__':
@@ -40,5 +41,7 @@ if __name__ == '__main__':
     missCircle = CircleAsset(radius, blackLine, blue)
     hitCircle = CircleAsset(radius, blackLine,red)
     
-    
+    redrawAll()
+
+    App().listenMouseEvent("click", mouseClick)
     App().run()
