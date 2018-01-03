@@ -27,7 +27,7 @@ def redrawAll():
 
 def mouseClick(event):
     print(event.x,event.y)
-    if event.x <= radius*10 and event.y <= radius*10:
+    if event.x <= radius and event.y <= radius:
                 roww = event.y//70
                 coll = event.x//70
     
