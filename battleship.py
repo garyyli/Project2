@@ -5,6 +5,10 @@
 from ggame import* 
 from random import randint
 
+Empty = 0
+Miss = 1
+Hit = 2
+Ships = 3
 radius = 40
 
 def buildBoard():
@@ -30,7 +34,8 @@ def mouseClick(event):
     if event.x <= radius*5 and event.y <= radius*5:
                 playerRow = event.y//radius
                 playerCol = event.x//radius
-                if data['playerBoard'][playerRow][playerCol] != 
+                if data['playerBoard'][playerRow][playerCol] != ships:
+                    Sprite(
 
         
 if __name__ == '__main__':
@@ -41,6 +46,7 @@ if __name__ == '__main__':
     white = Color(0xFFFFFF,1)
     blue = Color(0x009AFF, 1)
     red = Color(0xBD1D1D,1)
+    grey = Color(0x808080,1)
     
     blackLine = LineStyle(1,black)
     
