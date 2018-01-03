@@ -13,8 +13,6 @@ radius = 40
 
 def buildBoard():
     return [['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O']]
-    
-buildBoard()
 
 
 def redrawAll():
