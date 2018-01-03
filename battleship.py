@@ -35,7 +35,7 @@ def mouseClick(event):
                 playerRow = event.y//radius
                 playerCol = event.x//radius
                 if data['playerBoard'][playerRow][playerCol] != ships:
-                    Sprite(
+                    Sprite(shipCircle, 
 
         
 if __name__ == '__main__':
