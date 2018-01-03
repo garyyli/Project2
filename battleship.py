@@ -27,10 +27,14 @@ def redrawAll():
 
 def mouseClick(event):
     print(event.x,event.y)
+    if event.x <= radius*10 and event.y <= radius*10:
+                roww = event.y//70
+                coll = event.x//70
     
         
 if __name__ == '__main__':
     data = {}
+    playerShips = 0
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
