@@ -27,9 +27,10 @@ def redrawAll():
 
 def mouseClick(event):
     print(event.x,event.y)
-    if event.x <= radius and event.y <= radius:
+    if event.x <= radius*5 and event.y <= radius*5:
                 playerRow = event.y//radius
                 playerCol = event.x//radius
+                if data['playerBoard'][playerRow][playerCol] != 
 
         
 if __name__ == '__main__':
