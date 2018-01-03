@@ -32,7 +32,7 @@ def mouseClick(event):
     if event.x <= radius*5 and event.y <= radius*5:
                 playerRow = event.y//radius
                 playerCol = event.x//radius
-                if data['playerBoard'][playerRow][playerCol] != ships:
+                if data['playerBoard'][playerRow][playerCol] != Ships:
                     Sprite(shipCircle, 
 
         
