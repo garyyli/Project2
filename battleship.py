@@ -56,6 +56,7 @@ if __name__ == '__main__':
     emptyCircle = CircleAsset(radius, blackLine,white)
     missCircle = CircleAsset(radius, blackLine, blue)
     hitCircle = CircleAsset(radius, blackLine,red)
+    shipCircle = CircleAsset(radius, blackline, grey)
     textPlayer = TextAsset('Player', fill=black,style='bold 30pt Times')
     textComputer = TextAsset('Computer', fill=black,style='bold 30pt Times')
     
