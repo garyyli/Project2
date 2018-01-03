@@ -28,13 +28,13 @@ def redrawAll():
 def mouseClick(event):
     print(event.x,event.y)
     if event.x <= radius and event.y <= radius:
-                roww = event.y//70
-                coll = event.x//70
-    
+                playerRow = event.y//radius
+                playerCol = event.x//radius
+
         
 if __name__ == '__main__':
     data = {}
-    playerShips = 0
+    data['playerShips'] = 0
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
@@ -43,8 +43,8 @@ if __name__ == '__main__':
     
     blackLine = LineStyle(1,black)
     
-    playerBoard = buildBoard()
-    computerBoard = buildBoard()
+    data['playerBoard'] = buildBoard()
+    data['computerBoard'] = buildBoard()
     
     emptyCircle = CircleAsset(radius, blackLine,white)
     missCircle = CircleAsset(radius, blackLine, blue)
