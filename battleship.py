@@ -42,13 +42,11 @@ def redrawAll():
     Sprite(textComputer, (625,400))
 
 def mouseClick(event):
-    print(event.x,event.y)
     if data["playerShips"] < 3:
         if event.x <= radius*10 and event.y <= radius*10:
                 playerRow = event.y//(radius*2)
                 playerCol = event.x//(radius*2)
                 if data['playerBoard'][playerRow][playerCol] != Ships:
-                    print('hi')
                     data['playerBoard'][playerRow][playerCol] = Ships
                     data['playerShips'] += 1
                 redrawAll()
