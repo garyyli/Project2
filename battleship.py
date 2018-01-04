@@ -44,18 +44,24 @@ def redrawAll():
 def mouseClick(event):
     if data["playerShips"] < 3:
         if event.x <= radius*10 and event.y <= radius*10:
-                playerRow = event.y//(radius*2)
-                playerCol = event.x//(radius*2)
-                if data['playerBoard'][playerRow][playerCol] != Ships:
+            playerRow = event.y//(radius*2)
+            playerCol = event.x//(radius*2)
+            if data['playerBoard'][playerRow][playerCol] != Ships:
+                data['playerBoard'][playerRow][playerCol] = Ships                    
+                data['playerShips'] += 1
+            redrawAll()
+        elif event.x >= 500 and event.x <= 300+(radius*5):
+            playerRow = event.y//(radius*2)
+            playerCol = (event.x-300)//(radius*2)
+            if data['playerBoard'][playerRow][playerCol] != Ships:
                     data['playerBoard'][playerRow][playerCol] = Ships
                     data['playerShips'] += 1
-                redrawAll()
-        #elif event.x >= 500 and event.x <= 300+(radius*5)
 
 
 if __name__ == '__main__':
     data = {}
     data['playerShips'] = 0
+    data['playerShots'] = 0
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
