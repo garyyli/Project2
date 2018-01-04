@@ -43,12 +43,14 @@ def redrawAll():
 
 def mouseClick(event):
     print(event.x,event.y)
-    if event.x <= radius*5 and event.y <= radius*5:
+    if data['playerShips'] <= 3:
+        if event.x <= radius*5 and event.y <= radius*5:
                 playerRow = event.y//(radius*2)
                 playerCol = event.x//(radius*2)
                 if data['playerBoard'][playerRow][playerCol] != Ships:
                     data['playerBoard'][playerRow][playerCol] = Ships
-                    data['playerShips'] = 0
+                    data['playerShips'] += 0
+                redrawAll()
                     
 
         
