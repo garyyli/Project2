@@ -55,6 +55,7 @@ def mouseClick(event):
             playershotCol = (event.x-300)//(radius*2)
             if data['computerBoard'][playershotRow][playershotCol] == Ships:
                     data['computerBoard'][playershotRow][playershotCol] = Hit
+                    data['computerHits'] += 1
                     redrawAll()
             if data['computerBoard'][playershotRow][playershotCol] == 'O':
                     data['computerBoard'][playershotRow][playershotCol] = Miss
@@ -65,6 +66,7 @@ if __name__ == '__main__':
     data = {}
     data['playerShips'] = 0
     data['playerShots'] = 0
+    data['computerHits'] = 0
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
