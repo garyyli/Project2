@@ -57,7 +57,7 @@ def mouseClick(event):
                     data['computerBoard'][playershotRow][playershotCol] = Hit
                     data['computerHits'] += 1
                     redrawAll()
-            if data['computerBoard'][playershotRow][playershotCol] == 'O':
+            elif data['computerBoard'][playershotRow][playershotCol] == 'O':
                     data['computerBoard'][playershotRow][playershotCol] = Miss
                     redrawAll()
 
