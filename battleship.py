@@ -48,6 +48,7 @@ def mouseClick(event):
                 playerCol = event.x//(radius*2)
                 if data['playerBoard'][playerRow][playerCol] != Ships:
                     data['playerBoard'][playerRow][playerCol] = Ships
+                    data['playerShips'] = 0
                     
 
         
