@@ -20,10 +20,24 @@ def redrawAll():
         item.destroy()
     for row in range(0,5):
         for col in range(0,5):
-            Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
+            if data['playerBoard'][row][col] == Empty:
+                Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Miss:
+                Sprite(missCircle,(radius*2*row+radius, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Hit:
+                Sprite(hitCircle,(radius*2*row+radius, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Ships:
+                Sprite(shipCircle,(radius*2*row+radius, radius*2*col+radius))
     for row in range(0,5):
         for col in range(0,5):
-            Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
+            if data['playerBoard'][row][col] == Empty:
+                Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Miss:
+                Sprite(missCircle,(radius*2*row+radius+500, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Hit:
+                Sprite(hitCircle,(radius*2*row+radius+500, radius*2*col+radius))
+            elif data['playerBoard'][row][col] == Ships:
+                Sprite(shipCircle,(radius*2*row+radius+500, radius*2*col+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
 
