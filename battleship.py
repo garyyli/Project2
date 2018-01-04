@@ -51,11 +51,14 @@ def mouseClick(event):
                 data['playerShips'] += 1
             redrawAll()
         elif event.x >= 500 and event.x <= 300+(radius*5):
-            playerRow = event.y//(radius*2)
-            playerCol = (event.x-300)//(radius*2)
-            if data['playerBoard'][playerRow][playerCol] != Ships:
-                    data['playerBoard'][playerRow][playerCol] = Ships
-                    data['playerShips'] += 1
+            playershotRow = event.y//(radius*2)
+            playershotCol = (event.x-300)//(radius*2)
+            if data['computerBoard'][playershotRow][playershotCol] == Ships:
+                    data['computerBoard'][playershotRow][playershotCol] = Hit
+                    redrawAll()
+            if data['computerBoard'][playershotRow][playershotCol] == 'O':
+                    data['computerBoard'][playershotRow][playershotCol] = Miss
+                    redrawAll()
 
 
 if __name__ == '__main__':
