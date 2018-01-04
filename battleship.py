@@ -20,7 +20,7 @@ def redrawAll():
         item.destroy()
     for row in range(0,5):
         for col in range(0,5):
-            if data['playerBoard'][row][col] == Empty:
+            if data['playerBoard'][row][col] == 'O':
                 Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
             elif data['playerBoard'][row][col] == Miss:
                 Sprite(missCircle,(radius*2*row+radius, radius*2*col+radius))
@@ -30,7 +30,7 @@ def redrawAll():
                 Sprite(shipCircle,(radius*2*row+radius, radius*2*col+radius))
     for row in range(0,5):
         for col in range(0,5):
-            if data['computerBoard'][row][col] == Empty:
+            if data['computerBoard'][row][col] == 'O':
                 Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
             elif data['computerBoard'][row][col] == Miss:
                 Sprite(missCircle,(radius*2*row+radius+500, radius*2*col+radius))
