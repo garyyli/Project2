@@ -52,10 +52,8 @@ def mouseClick(event):
                     data['playerShips'] += 1
                 redrawAll()
         elif event.x >= 500 and event.x <= 300+(radius*5):
-        
-                    
 
-        
+
 if __name__ == '__main__':
     data = {}
     data['playerShips'] = 0
