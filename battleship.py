@@ -21,33 +21,34 @@ def redrawAll():
     for row in range(0,5):
         for col in range(0,5):
             if data['playerBoard'][row][col] == 'O':
-                Sprite(emptyCircle,(radius*2*row+radius, radius*2*col+radius))
+                Sprite(emptyCircle,(radius*2*col+radius, radius*2*row+radius))
             elif data['playerBoard'][row][col] == Miss:
-                Sprite(missCircle,(radius*2*row+radius, radius*2*col+radius))
+                Sprite(missCircle,(radius*2*col+radius, radius*2*row+radius))
             elif data['playerBoard'][row][col] == Hit:
-                Sprite(hitCircle,(radius*2*row+radius, radius*2*col+radius))
+                Sprite(hitCircle,(radius*2*col+radius, radius*2*row+radius))
             elif data['playerBoard'][row][col] == Ships:
-                Sprite(shipCircle,(radius*2*row+radius, radius*2*col+radius))
+                Sprite(shipCircle,(radius*2*col+radius, radius*2*row+radius))
     for row in range(0,5):
         for col in range(0,5):
             if data['computerBoard'][row][col] == 'O':
-                Sprite(emptyCircle,(radius*2*row+radius+500, radius*2*col+radius))
+                Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Miss:
-                Sprite(missCircle,(radius*2*row+radius+500, radius*2*col+radius))
+                Sprite(missCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Hit:
-                Sprite(hitCircle,(radius*2*row+radius+500, radius*2*col+radius))
+                Sprite(hitCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Ships:
-                Sprite(shipCircle,(radius*2*row+radius+500, radius*2*col+radius))
+                Sprite(shipCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
 
 def mouseClick(event):
     print(event.x,event.y)
     if data["playerShips"] < 3:
-        if event.x <= radius*5 and event.y <= radius*5:
+        if event.x <= radius*10 and event.y <= radius*10:
                 playerRow = event.y//(radius*2)
                 playerCol = event.x//(radius*2)
                 if data['playerBoard'][playerRow][playerCol] != Ships:
+                    print('hi')
                     data['playerBoard'][playerRow][playerCol] = Ships
                     data['playerShips'] += 1
                 redrawAll()
