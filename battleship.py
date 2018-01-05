@@ -69,12 +69,25 @@ def computerShips():
         if data['computerBoard'][computerRow][computerCol] != Ships:
             data['computerBoard'][computerRow][computerCol] = Ships
             computerShips += 1
-    
+
+def computerTurn():
+    playerRow = randint(0,4)
+    playerCol = randint(0,4)
+    if data['playerBoard'][playerRow][playerCol] = Ships:
+        data['playerBoard'][playerRow][playerCol] = Hit
+        data['playerHits'] += 1
+    if data['playerBoard'][playerRow][playerCol] = 'O':
+        data['playerBoard'][playerRow][playerCol] = Miss
+    else:
+        computerTurn()
+
+
 if __name__ == '__main__':
     data = {}
     data['playerShips'] = 0
     data['playerShots'] = 0
     data['computerHits'] = 0
+    data['playerHits'] = 0
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
@@ -100,4 +113,5 @@ if __name__ == '__main__':
 
     App().listenMouseEvent("click", mouseClick)
     computerShips()
+    computerTurn()
     App().run()
