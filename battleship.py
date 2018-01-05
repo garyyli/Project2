@@ -50,7 +50,7 @@ def mouseClick(event):
                 data['playerBoard'][playerRow][playerCol] = Ships                    
                 data['playerShips'] += 1
             redrawAll()
-    elif event.x >= 500 and event.x <= 300+(radius*10):
+    elif event.x >= 500 and event.x <= 500+(radius*10):
         playershotRow = event.y//(radius*2)
         playershotCol = (event.x-300)//(radius*2)
         if data['computerBoard'][playershotRow][playershotCol] == Ships:
