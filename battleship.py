@@ -5,7 +5,6 @@
 from ggame import* 
 from random import randint
 
-
 Miss = 1
 Hit = 2
 Ships = 3
@@ -15,7 +14,7 @@ def buildBoard(): #creates a 5x5 empty matrix
     return [['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O']]
 
 
-def redrawAll():
+def redrawAll(): #creates the game board (both player and computer
     for item in App().spritelist[:]:
         item.destroy()
     for row in range(0,5):
@@ -41,7 +40,7 @@ def redrawAll():
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
 
-def mouseClick(event):
+def mouseClick(event): #the function that places ships/determines if moves are misses/hits
     if data['endGame'] == False:
         if data["playerShips"] < 3:
             if event.x <= radius*10 and event.y <= radius*10:
@@ -67,7 +66,7 @@ def mouseClick(event):
                     computerTurn()
                     redrawAll()
     
-def computerShips():
+def computerShips(): #computer places ships in random location on the computer board
     computerShips = 0
     while computerShips < 3:
         computerRow = randint(0,4)
@@ -76,7 +75,7 @@ def computerShips():
             data['computerBoard'][computerRow][computerCol] = Ships
             computerShips += 1
 
-def computerTurn():
+def computerTurn(): #computer takes turn (makes move selecting a random location on the player board to fire its shot)
     playerRow = randint(0,4)
     playerCol = randint(0,4)
     if data['playerBoard'][playerRow][playerCol] == Ships:
@@ -93,7 +92,7 @@ def computerTurn():
         computerTurn()
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #function that actually runs the game
     data = {}
     data['playerShips'] = 0
     data['playerShots'] = 0
