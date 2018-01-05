@@ -42,7 +42,7 @@ def redrawAll():
     Sprite(textComputer, (625,400))
 
 def mouseClick(event):
-    if data['endGame'] == False
+    if data['endGame'] == False:
         if data["playerShips"] < 3:
             if event.x <= radius*10 and event.y <= radius*10:
                 playerRow = event.y//(radius*2)
@@ -87,6 +87,7 @@ def computerTurn():
         data['playerBoard'][playerRow][playerCol] = Miss
         redrawAll()
     elif data['playerHits'] == 3:
+        data['endGame'] = True
         Sprite(textComputerWins, (250,400))
     else:
         computerTurn()
