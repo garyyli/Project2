@@ -5,13 +5,13 @@
 from ggame import* 
 from random import randint
 
-Empty = 0
+
 Miss = 1
 Hit = 2
 Ships = 3
 radius = 40
 
-def buildBoard():
+def buildBoard(): #creates a 5x5 empty matrix
     return [['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O'],['O','O','O','O','O']]
 
 
