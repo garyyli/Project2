@@ -64,8 +64,8 @@ def mouseClick(event):
 def computerShips():
     while True:
         computerShips = 0
-        computerRow = randint(0,5)
-        computerCol = randint(0,5)
+        computerRow = randint(0,4)
+        computerCol = randint(0,4)
         if data['computerBoard'][computerRow][computerCol] != Ships:
             data['computerBoard'][computerRow][computerCol] = Ships
             computerShips += 1
