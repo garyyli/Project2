@@ -83,7 +83,7 @@ def computerTurn():
         data['playerBoard'][playerRow][playerCol] = Hit
         data['playerHits'] += 1
         redrawAll()
-    elif data['playerBoard'][playerRow][playerCol] == 'O':
+    if data['playerBoard'][playerRow][playerCol] == 'O':
         data['playerBoard'][playerRow][playerCol] = Miss
         redrawAll()
     elif data['playerHits'] == 3:
