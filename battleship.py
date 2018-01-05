@@ -68,9 +68,9 @@ def computerShips():
         if computerShips <3:
             computerRow = randint(0,4)
             computerCol = randint(0,4)
-        if data['computerBoard'][computerRow][computerCol] != Ships:
-            data['computerBoard'][computerRow][computerCol] = Ships
-            computerShips += 1
+            if data['computerBoard'][computerRow][computerCol] != Ships:
+                data['computerBoard'][computerRow][computerCol] = Ships
+                computerShips += 1
         computerPlacements = False
     
 if __name__ == '__main__':
