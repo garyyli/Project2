@@ -42,29 +42,31 @@ def redrawAll():
     Sprite(textComputer, (625,400))
 
 def mouseClick(event):
-    if data["playerShips"] < 3:
-        if event.x <= radius*10 and event.y <= radius*10:
-            playerRow = event.y//(radius*2)
-            playerCol = event.x//(radius*2)
-            if data['playerBoard'][playerRow][playerCol] != Ships:
-                data['playerBoard'][playerRow][playerCol] = Ships                    
-                data['playerShips'] += 1
-            redrawAll()
-    elif event.x >= 500 and event.x <= 500+(radius*10):
-        playershotRow = event.y//(radius*2)
-        playershotCol = (event.x-500)//(radius*2)
-        if data['computerBoard'][playershotRow][playershotCol] == Ships:
-                data['computerBoard'][playershotRow][playershotCol] = Hit
-                data['computerHits'] += 1
-                if data['computerHits'] == 3:
-                    Sprite(textPlayerWins, (250,400))
-                computerTurn()
+    if data['endGame'] == False
+        if data["playerShips"] < 3:
+            if event.x <= radius*10 and event.y <= radius*10:
+                playerRow = event.y//(radius*2)
+                playerCol = event.x//(radius*2)
+                if data['playerBoard'][playerRow][playerCol] != Ships:
+                    data['playerBoard'][playerRow][playerCol] = Ships                    
+                    data['playerShips'] += 1
                 redrawAll()
-        elif data['computerBoard'][playershotRow][playershotCol] == 'O':
-                data['computerBoard'][playershotRow][playershotCol] = Miss
-                computerTurn()
-                redrawAll()
-
+        elif event.x >= 500 and event.x <= 500+(radius*10):
+            playershotRow = event.y//(radius*2)
+            playershotCol = (event.x-500)//(radius*2)
+            if data['computerBoard'][playershotRow][playershotCol] == Ships:
+                    data['computerBoard'][playershotRow][playershotCol] = Hit
+                    data['computerHits'] += 1
+                    if data['computerHits'] == 3:
+                        data['endGame'] = True
+                        Sprite(textPlayerWins, (250,400))
+                    computerTurn()
+                    redrawAll()
+            elif data['computerBoard'][playershotRow][playershotCol] == 'O':
+                    data['computerBoard'][playershotRow][playershotCol] = Miss
+                    computerTurn()
+                    redrawAll()
+    
 def computerShips():
     computerShips = 0
     while computerShips < 3:
@@ -96,6 +98,7 @@ if __name__ == '__main__':
     data['playerShots'] = 0
     data['computerHits'] = 0
     data['playerHits'] = 0
+    data['endGame'] = False
     
     black = Color(0x000000,1)
     white = Color(0xFFFFFF,1)
