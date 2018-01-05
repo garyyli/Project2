@@ -37,7 +37,7 @@ def redrawAll():
             elif data['computerBoard'][row][col] == Hit:
                 Sprite(hitCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Ships:
-                Sprite(shipCircle,(radius*2*col+radius+500, radius*2*row+radius))
+                Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
 
