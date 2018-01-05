@@ -97,6 +97,7 @@ if __name__ == '__main__':
     shipCircle = CircleAsset(radius, blackLine, grey)
     textPlayer = TextAsset('Player', fill=black,style='bold 30pt Times')
     textPlayerWins = TextAsset('Player wins!!', fill=black,style='bold 40pt Times')
+    textComputer = TextAsset('Computer', fill=black,style='bold 30pt Times')
     textComputerWins = TextAsset('Computer wins!!', fill=black,style='bold 40pt Times')
     
     redrawAll()
