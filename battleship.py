@@ -129,7 +129,6 @@ if __name__ == '__main__': #sets up/runs the game
     textComputer = TextAsset('Computer', fill=black,style='bold 30pt Times')
     textComputerWins = TextAsset('Computer wins!!', fill=black,style='bold 40pt Times')
 
-
     redrawAll()
     App().listenMouseEvent("click", mouseClick)
     computerShips()
