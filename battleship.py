@@ -73,10 +73,10 @@ def computerShips():
 def computerTurn():
     playerRow = randint(0,4)
     playerCol = randint(0,4)
-    if data['playerBoard'][playerRow][playerCol] = Ships:
+    if data['playerBoard'][playerRow][playerCol] == Ships:
         data['playerBoard'][playerRow][playerCol] = Hit
         data['playerHits'] += 1
-    if data['playerBoard'][playerRow][playerCol] = 'O':
+    if data['playerBoard'][playerRow][playerCol] == 'O':
         data['playerBoard'][playerRow][playerCol] = Miss
     else:
         computerTurn()
