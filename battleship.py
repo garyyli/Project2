@@ -65,13 +65,13 @@ def computerShips():
     computerPlacements = True
     if computerPlacements == True:
         computerShips = 0
+        if computerShips <3:
         computerRow = randint(0,4)
         computerCol = randint(0,4)
         if data['computerBoard'][computerRow][computerCol] != Ships:
             data['computerBoard'][computerRow][computerCol] = Ships
             computerShips += 1
-        if computerShips == 3:
-            computerPlacements = False
+        computerPlacements = False
     
 if __name__ == '__main__':
     data = {}
