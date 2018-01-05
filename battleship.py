@@ -39,6 +39,12 @@ def redrawAll(): #creates the game board (both player and computer
                 Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
+    if ['endGame'] == True:
+        if data['computerHits'] == 3:
+            Sprite(TextAsset('Player wins!!', fill=black,style='bold 40pt Times'), (250,400))
+         if data['playerHits'] == 3:
+            Sprite(TextAsset('Computer wins!!', fill=black,style='bold 40pt Times'), (250,400))
+             
 
 def mouseClick(event): #the function that places ships/determines if moves are misses/hits
     if data['endGame'] == False:
@@ -121,6 +127,7 @@ if __name__ == '__main__': #sets up/runs the game
     textPlayerWins = TextAsset('Player wins!!', fill=black,style='bold 40pt Times')
     textComputer = TextAsset('Computer', fill=black,style='bold 30pt Times')
     textComputerWins = TextAsset('Computer wins!!', fill=black,style='bold 40pt Times')
+
 
     redrawAll()
     App().listenMouseEvent("click", mouseClick)
