@@ -61,7 +61,7 @@ def mouseClick(event):
                 data['computerBoard'][playershotRow][playershotCol] = Miss
                 redrawAll()
 
-def computerTurn():
+#def computerTurn():
     
     
 
@@ -92,5 +92,5 @@ if __name__ == '__main__':
     redrawAll()
 
     App().listenMouseEvent("click", mouseClick)
-    computerTurn()
+    #computerTurn()
     App().run()
