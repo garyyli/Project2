@@ -36,13 +36,15 @@ def redrawAll(): #creates the game board (both player and computer
             elif data['computerBoard'][row][col] == Hit:
                 Sprite(hitCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Ships:
-                Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
+                Sprite(shipCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
     if ['endGame'] == True:
         if data['computerHits'] == 3:
+            print('Hi')
             Sprite(TextAsset('Player wins!!', fill=black,style='bold 40pt Times'), (250,400))
         if data['playerHits'] == 3:
+            print('Hi')
             Sprite(TextAsset('Computer wins!!', fill=black,style='bold 40pt Times'), (250,400))
              
 
@@ -88,14 +90,13 @@ def computerTurn(): #computer takes turn (makes move selecting a random location
     if data['playerBoard'][playerRow][playerCol] == Ships:
         data['playerBoard'][playerRow][playerCol] = Hit
         data['playerHits'] += 1
+        if data['playerHits'] == 3:
+            data['endGame'] = True
+            print('Hello')
         redrawAll()
     elif data['playerBoard'][playerRow][playerCol] == 'O':
         data['playerBoard'][playerRow][playerCol] = Miss
         redrawAll()
-    elif data['playerHits'] == 3:
-        data['endGame'] = True
-        print('Hello')
-        Sprite(TextAsset('Computer wins!!', fill=black,style='bold 40pt Times'), (250,400))
     else:
         computerTurn()
 
