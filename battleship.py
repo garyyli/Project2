@@ -56,9 +56,11 @@ def mouseClick(event):
         if data['computerBoard'][playershotRow][playershotCol] == Ships:
                 data['computerBoard'][playershotRow][playershotCol] = Hit
                 data['computerHits'] += 1
+                computerTurn()
                 redrawAll()
         elif data['computerBoard'][playershotRow][playershotCol] == 'O':
                 data['computerBoard'][playershotRow][playershotCol] = Miss
+                computerTurn()
                 redrawAll()
 
 def computerShips():
