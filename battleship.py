@@ -62,7 +62,8 @@ def mouseClick(event):
                 redrawAll()
 
 def computerShips():
-    while True:
+    computerPlacements = True
+    if computerPlacements == True:
         computerShips = 0
         computerRow = randint(0,4)
         computerCol = randint(0,4)
@@ -70,10 +71,8 @@ def computerShips():
             data['computerBoard'][computerRow][computerCol] = Ships
             computerShips += 1
         if computerShips == 3:
-            break
+            computerPlacements = False
     
-    
-
 if __name__ == '__main__':
     data = {}
     data['playerShips'] = 0
