@@ -57,7 +57,7 @@ def mouseClick(event):
                 data['computerBoard'][playershotRow][playershotCol] = Hit
                 data['computerHits'] += 1
                 if data['computerHits'] == 3:
-                    Sprite(textPlayerWins, (150,400))
+                    Sprite(textPlayerWins, (250,400))
                 computerTurn()
                 redrawAll()
         elif data['computerBoard'][playershotRow][playershotCol] == 'O':
