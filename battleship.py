@@ -92,7 +92,7 @@ def computerTurn(): #computer takes turn (makes move selecting a random location
         computerTurn()
 
 
-if __name__ == '__main__': #function that actually runs the game
+if __name__ == '__main__': #sets up/runs the game
     data = {}
     data['playerShips'] = 0
     data['playerShots'] = 0
