@@ -40,7 +40,6 @@ def redrawAll():
                 Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
-    Sprite(gameDirections, (400,600))
 
 def mouseClick(event):
     if data['endGame'] == False:
@@ -121,10 +120,8 @@ if __name__ == '__main__':
     textPlayerWins = TextAsset('Player wins!!', fill=black,style='bold 40pt Times')
     textComputer = TextAsset('Computer', fill=black,style='bold 30pt Times')
     textComputerWins = TextAsset('Computer wins!!', fill=black,style='bold 40pt Times')
-    gameDirections = TextAsset('Place three ships on the "player" board, then FIRE AT THE COMPUTER', fill=black,style='bold 20pt Times')
-    
-    redrawAll()
 
+    redrawAll()
     App().listenMouseEvent("click", mouseClick)
     computerShips()
     App().run()
