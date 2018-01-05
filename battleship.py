@@ -37,7 +37,7 @@ def redrawAll():
             elif data['computerBoard'][row][col] == Hit:
                 Sprite(hitCircle,(radius*2*col+radius+500, radius*2*row+radius))
             elif data['computerBoard'][row][col] == Ships:
-                Sprite(shipCircle,(radius*2*col+radius+500, radius*2*row+radius))
+                Sprite(emptyCircle,(radius*2*col+radius+500, radius*2*row+radius))
     Sprite(textPlayer, (150,400))
     Sprite(textComputer, (625,400))
 
@@ -65,13 +65,13 @@ def computerShips():
     computerPlacements = True
     if computerPlacements == True:
         computerShips = 0
-        if computerShips <3:
+        while computerShips <3:
             computerRow = randint(0,4)
             computerCol = randint(0,4)
             if data['computerBoard'][computerRow][computerCol] != Ships:
                 data['computerBoard'][computerRow][computerCol] = Ships
                 computerShips += 1
-        computerPlacements = False
+    computerPlacements = False
     
 if __name__ == '__main__':
     data = {}
