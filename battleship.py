@@ -58,7 +58,8 @@ def mouseClick(event): #the function that places ships/determines if moves are m
                     data['computerHits'] += 1
                     if data['computerHits'] == 3:
                         data['endGame'] = True
-                        Sprite(textPlayerWins, (250,400))
+                        print('Hello')
+                        Sprite(TextAsset('Player wins!!', fill=black,style='bold 40pt Times'), (250,400))
                     computerTurn()
                     redrawAll()
             elif data['computerBoard'][playershotRow][playershotCol] == 'O':
@@ -82,12 +83,13 @@ def computerTurn(): #computer takes turn (makes move selecting a random location
         data['playerBoard'][playerRow][playerCol] = Hit
         data['playerHits'] += 1
         redrawAll()
-    if data['playerBoard'][playerRow][playerCol] == 'O':
+    elif data['playerBoard'][playerRow][playerCol] == 'O':
         data['playerBoard'][playerRow][playerCol] = Miss
         redrawAll()
     elif data['playerHits'] == 3:
         data['endGame'] = True
-        Sprite(textComputerWins, (250,400))
+        print('Hello')
+        Sprite(TextAsset('Computer wins!!', fill=black,style='bold 40pt Times'), (250,400))
     else:
         computerTurn()
 
