@@ -76,8 +76,10 @@ def computerTurn():
     if data['playerBoard'][playerRow][playerCol] == Ships:
         data['playerBoard'][playerRow][playerCol] = Hit
         data['playerHits'] += 1
+        redrawAll()
     if data['playerBoard'][playerRow][playerCol] == 'O':
         data['playerBoard'][playerRow][playerCol] = Miss
+        redrawAll()
     else:
         computerTurn()
 
@@ -113,5 +115,4 @@ if __name__ == '__main__':
 
     App().listenMouseEvent("click", mouseClick)
     computerShips()
-    computerTurn()
     App().run()
