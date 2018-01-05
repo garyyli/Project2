@@ -85,7 +85,7 @@ def computerTurn():
         data['playerBoard'][playerRow][playerCol] = Miss
         redrawAll()
     elif data['playerHits'] == 3:
-        Sprite(textComputerWins, (150,400))
+        Sprite(textComputerWins, (250,400))
     else:
         computerTurn()
 
